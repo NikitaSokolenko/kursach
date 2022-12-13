@@ -32,6 +32,7 @@ void conversation(WebManager new_manager, DB new_db, int sock)
         std::cout<<new_auth.getstrHash()<<std::endl;
         std::cout<<new_auth.CompareHashes(pass)<<std::endl;
         if (new_auth.CompareHashes(pass)) {
+        	new_manager.sending(sock, (void*)"OK", sizeof("OK"));
             uint32_t num_vectors;
             uint32_t vector_len;
             int16_t number;
@@ -64,17 +65,12 @@ int main(int argc, char **argv)
     WebManager new_manager(op.getPort());
     new_manager.new_bind();
     std::vector <thread> tr;
+	new_manager.start_listening();
     while (true) {
-        new_manager.start_listening();
         int sock = new_manager.accepting();
         tr.push_back(thread(conversation, new_manager, new_db, sock));
         for (std::vector<thread>::iterator it = tr.begin() ; it != tr.end(); ++it) {
-            if ((*it).joinable()) {
-                (*it).join();
-            } else {
                 (*it).detach();
-
-            }
         }
     }
     return 0;

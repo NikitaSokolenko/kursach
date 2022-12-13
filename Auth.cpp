@@ -49,11 +49,7 @@ bool Auth::CompareHashes(std::string ClientHash)
     using namespace CryptoPP;
     Weak::MD5 hash;
     std::string msg = SALT+password;
-    byte *buffer = new byte [hash.DigestSize()];
-    hash.Update((const byte*)msg.data(), msg.size());
-    hash.Final(buffer);
-    StringSource(buffer, true /*pumpAll*/, new HexEncoder(new StringSink (strHash)));
-    delete buffer;
-    std::cout<<strHash<<std::endl;
+    std::cout<<msg<<std::endl;
+    StringSource ss(msg, true /*pumpAll*/, new HashFilter(hash, new HexEncoder(new StringSink (strHash))));
     return ClientHash == strHash;
 }
