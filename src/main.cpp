@@ -1,12 +1,14 @@
-#include "interface.h"
-#include "Auth.h"
-#include "Counter.h"
-#include "DataBase.h"
+#include <interface.h>
+#include <Auth.h>
+#include <Counter.h>
+#include <DataBase.h>
 #include <iostream>
-#include "WebManager.h"
+#include <WebManager.h>
 #include <thread>
 #include <vector>
 #include <string>
+
+using namespace std;
 
 void conversation(WebManager new_manager, DB new_db, int sock)
 {
@@ -14,7 +16,6 @@ void conversation(WebManager new_manager, DB new_db, int sock)
     int bytes_read;
     bytes_read = new_manager.receiving(sock, buf);
     string login = string(buf);
-    std::cout<<login<<std::endl;
     login.pop_back();
     if (new_db.IDcheck(login)) {
         Auth new_auth(login, new_db.DataBaseP[login]);
@@ -28,10 +29,10 @@ void conversation(WebManager new_manager, DB new_db, int sock)
         bytes_read = new_manager.receiving(sock, buf);
         string pass = string(buf);
         pass.pop_back();
-        std::cout<<new_auth.CompareHashes(pass)<<std::endl;
         std::cout<<new_auth.getstrHash()<<std::endl;
+        std::cout<<new_auth.CompareHashes(pass)<<std::endl;
         if (new_auth.CompareHashes(pass)) {
-            new_manager.sending(sock, (void*)"OK", sizeof("OK"));
+        	new_manager.sending(sock, (void*)"OK", sizeof("OK"));
             uint32_t num_vectors;
             uint32_t vector_len;
             int16_t number;
@@ -48,7 +49,6 @@ void conversation(WebManager new_manager, DB new_db, int sock)
         } else {
             new_manager.sending(sock, Auth("NO","NO").ERRmsg, sizeof(Auth("NO","NO").ERRmsg));
             new_manager.closing(sock);
-            return;
         }
         new_manager.closing(sock);
     } else {
@@ -65,20 +65,13 @@ int main(int argc, char **argv)
     WebManager new_manager(op.getPort());
     new_manager.new_bind();
     std::vector <thread> tr;
-    std::cout<<"robit"<<std::endl;
-    new_manager.start_listening();
+	new_manager.start_listening();
     while (true) {
         int sock = new_manager.accepting();
-        /*while (tr.size() > 9) {
-            sleep(1);
-        }*/
-        std::cout<<"got_it"<<std::endl;
         tr.push_back(thread(conversation, new_manager, new_db, sock));
         for (std::vector<thread>::iterator it = tr.begin() ; it != tr.end(); ++it) {
-            (*it).detach();
-
+                (*it).detach();
         }
-        conversation(new_manager, new_db, sock);
     }
     return 0;
 }

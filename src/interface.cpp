@@ -2,7 +2,7 @@
 #include <cstdlib> // для функций strtol, exit
 #include <unistd.h> // для функции getopt
 #include <string>
-#include "interface.h"
+#include <interface.h>
 #include <fstream>
 #include <map>
 #include <exception>

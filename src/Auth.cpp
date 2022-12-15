@@ -9,7 +9,8 @@
 #include <random>
 #include <sstream>
 #include <map>
-#include "Auth.h"
+#include <Auth.h>
+#include <interface.h>
 #include <exception>
 #include <typeinfo>
 #include <string>
