@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <string.h>
 #include <sys/types.h>
@@ -21,7 +23,7 @@ public:
     void start_listening();
     int new_bind();
     int accepting();
-    int receiving(int sock, void*buf);
+    int receiving(int sock, void*buf, int size);
     void sending(int sock, void*buf, int sizeb);
     void closing(int sock);
 };

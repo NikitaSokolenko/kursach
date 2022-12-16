@@ -32,8 +32,8 @@ int WebManager::accepting(){
     return accept(listener,  (sockaddr*)(client_addr), &len);
 }
 
-int WebManager::receiving(int sock, void*buf){
-    return recv(sock, buf, sizeof(buf), 0);
+int WebManager::receiving(int sock, void*buf, int size){
+    return recv(sock, buf, size, 0);
 }
 
 void WebManager::sending(int sock, void*buf, int sizeb){
