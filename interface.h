@@ -8,7 +8,7 @@ class Opts
 {
 private:
     string DataBaseName = "/home/stud/C++Projects/kursach/DB.txt";
-    string LogFileName = "/var/log/vcalc.log";
+    string LogFileName = "log.txt";
     int Port = 33333;
     char sep = ':';
     void usage(const char* progName); //вывод подсказки и останов

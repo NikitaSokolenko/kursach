@@ -14,13 +14,13 @@ Opts::Opts(int argc, char **argv)
     int opt;
     while ((opt = getopt(argc, argv, "b:l:p:h")) != -1) {
         switch (opt) {
-        case 'b': // длина пароля
-            DataBaseName = optarg;
+        case 'b':
+            DataBaseName = string(optarg);
             break;
-        case 'l': // кол-во паролей
-            LogFileName = optarg;
+        case 'l':
+            LogFileName = string(optarg);
             break;
-        case 'p': // исп. цифры
+        case 'p':
             Port = strtol(optarg,nullptr,10);
             break;
         case 'h': // -h help

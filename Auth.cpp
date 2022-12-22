@@ -10,6 +10,7 @@
 #include <sstream>
 #include <map>
 #include "Auth.h"
+#include "ErrorTracker.h"
 #include <exception>
 #include <typeinfo>
 #include <string>
@@ -17,7 +18,7 @@
 Auth::Auth(std::string ID, std::string pass) {
     Id = ID;
     password = pass;
-    };
+    }
 
 
 void Auth::GenSALT()
@@ -44,11 +45,15 @@ void Auth::GenSALT()
 }
 
 bool Auth::CompareHashes(std::string ClientHash)
-{
+{	try{
     using namespace CryptoPP;
     Weak::MD5 hash;
     std::string msg = SALT+password;
     std::cout<<msg<<std::endl;
     StringSource ss(msg, true /*pumpAll*/, new HashFilter(hash, new HexEncoder(new StringSink (strHash))));
-    return ClientHash == strHash;
+    } catch(const CryptoPP::Exception& e ) {    // catch exception
+        write_log(e.what(), false);
+        return false;}
+	std::cout<<"клиент: "<<ClientHash<<" "<<"Сервер: "<<strHash<<" "<<ClientHash.compare(strHash)<<std::endl;
+    return (ClientHash.compare(strHash) == 0);
 }
