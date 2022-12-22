@@ -15,6 +15,8 @@
 #include <typeinfo>
 #include <string>
 
+extern ErrorTracker ErrTr;
+
 Auth::Auth(std::string ID, std::string pass) {
     Id = ID;
     password = pass;
@@ -52,8 +54,9 @@ bool Auth::CompareHashes(std::string ClientHash)
     std::cout<<msg<<std::endl;
     StringSource ss(msg, true /*pumpAll*/, new HashFilter(hash, new HexEncoder(new StringSink (strHash))));
     } catch(const CryptoPP::Exception& e ) {    // catch exception
-        write_log(e.what(), false);
-        return false;}
+        ErrTr.write_log(e.what(), false);
+        return false;}	
 	std::cout<<"клиент: "<<ClientHash<<" "<<"Сервер: "<<strHash<<" "<<ClientHash.compare(strHash)<<std::endl;
     return (ClientHash.compare(strHash) == 0);
 }
+

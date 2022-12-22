@@ -13,6 +13,8 @@ using namespace std;
 
 void conversation(WebManager new_manager, DB new_db, int sock)
 {
+	if(sock<0){
+		return;}
     char buf[2048];
     int bytes_read;
     bytes_read = new_manager.receiving(sock, &buf, 2048);

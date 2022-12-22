@@ -8,10 +8,6 @@
 #include <limits>
 #include <iostream>
 
-ErrorTracker::ErrorTracker(std::string LogName)
-{
-    LogFileName = LogName;
-}
 
 void ErrorTracker::write_log(std::string what, bool Critical)
 {
@@ -19,15 +15,12 @@ void ErrorTracker::write_log(std::string what, bool Critical)
     char* dt = ctime(&now);
     tm *gmtm = gmtime(&now);
     dt = asctime(gmtm);
-    std::ofstream log(LogFileName);
-	if(!log.good()){
-		exit(1);} 
-    char err_buf[1024];
-    std::string err_msg;
+    std::ofstream log(LogFileName, std::ios_base::app);
+    std::string err_msg = std::string(dt);
+	err_msg.pop_back();
     if (Critical){
-    err_msg = std::string(dt)+" "+what + " Критическая\n";}
-    else {err_msg = std::string(dt)+" "+what + " Штатная\n";}
-    strcpy(err_buf, err_msg.c_str());
-    log.write(err_buf,sizeof(err_buf));
+    err_msg += " "+what + " Критическая\n";}
+    else {err_msg += " "+what + " Штатная\n";}
+    log.write(err_msg.c_str(),err_msg.size());
     log.close();
 }

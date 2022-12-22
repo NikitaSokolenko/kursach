@@ -11,12 +11,12 @@
 #include <map>
 #include "ErrorTracker.h"
 
-
+ErrorTracker ErrTr;
 
 int main(int argc, char **argv)
 {
     Opts op(argc, argv);
-    ErrorTracker ErrTr(op.getLogFileName());
+    ErrTr.setLogName(op.getLogFileName());
     op.CheckFiles();
     DB new_db(op.getDataBaseName());
     WebManager new_manager(op.getPort());

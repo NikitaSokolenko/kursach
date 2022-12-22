@@ -1,12 +1,15 @@
 #include <iostream>
-#include <cstdlib> // для функций strtol, exit
-#include <unistd.h> // для функции getopt
+#include <cstdlib> 
+#include <unistd.h> 
 #include <string>
 #include "interface.h"
 #include <fstream>
 #include <map>
 #include <exception>
-// реализация интерфейса в виде класса
+#include "ErrorTracker.h"
+
+extern ErrorTracker ErrTr;
+
 using namespace std;
 
 Opts::Opts(int argc, char **argv)
@@ -23,10 +26,10 @@ Opts::Opts(int argc, char **argv)
         case 'p':
             Port = strtol(optarg,nullptr,10);
             break;
-        case 'h': // -h help
-        case '?': // неверный параметр
-        case ':': // нет значения у параметра
-            usage(argv[0]); // сообщить и завершить
+        case 'h': 
+        case '?': 
+        case ':': 
+            usage(argv[0]);
         }
     }
 }
@@ -41,21 +44,23 @@ bool Opts::CheckFiles()
 {
     try {
         std::ifstream file1(DataBaseName);
-        if (file1.bad()) {
-            throw std::invalid_argument("what");
+        if (!file1.good()) {
+            throw std::invalid_argument(std::string("Wrong DB File Name"));
         }
-    } catch(std::invalid_argument err) {
-        cout<<err.what()<<std::endl;
+    } catch(std::exception& e) {
+        ErrTr.write_log(e.what(), true);
         exit(1);
     }
     try {
         std::ifstream file2(LogFileName);
-        if (file2.bad()) {
-            throw std::invalid_argument("what");
+        if (!file2.good()) {
+            throw std::invalid_argument(std::string("Wrong Log File Name"));
         }
-    } catch(std::invalid_argument err) {
-        cout<<err.what()<<std::endl;
+    } catch(std::exception& e) {
+        ErrTr.write_log(e.what(), true);
         exit(1);
     }
+
+
     return true;
 }

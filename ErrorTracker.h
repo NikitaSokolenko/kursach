@@ -10,6 +10,6 @@ private:
     std::string LogFileName;
 public:
 	ErrorTracker(){};
-    ErrorTracker(std::string LogName);
+    void setLogName(std::string LogName){LogFileName = LogName;}
     void write_log(std::string what, bool Critacal);
 };

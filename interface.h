@@ -7,7 +7,7 @@ using namespace std;
 class Opts
 {
 private:
-    string DataBaseName = "/home/stud/C++Projects/kursach/DB.txt";
+    string DataBaseName = "DB.txt";
     string LogFileName = "log.txt";
     int Port = 33333;
     char sep = ':';
