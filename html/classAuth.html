@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Курсовая работа. Программная реализация сетевого сервера: Класс Auth</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Курсовая работа. Программная реализация сетевого сервера
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Однопоточный сервер</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="classAuth-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс Auth</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для аутентификации клиента на сервере  
+ <a href="classAuth.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Auth_8h_source.html">Auth.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a19ea0c3de029154f385c4e3815806efb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAuth.html#a19ea0c3de029154f385c4e3815806efb">Auth</a> (std::string ID, std::string pass)</td></tr>
+<tr class="memdesc:a19ea0c3de029154f385c4e3815806efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор для установки идентификатора и пароля клиента  <a href="classAuth.html#a19ea0c3de029154f385c4e3815806efb">Подробнее...</a><br /></td></tr>
+<tr class="separator:a19ea0c3de029154f385c4e3815806efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad573b4dce5a7e27084b7f8a211e2a2f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAuth.html#ad573b4dce5a7e27084b7f8a211e2a2f4">GenSALT</a> ()</td></tr>
+<tr class="memdesc:ad573b4dce5a7e27084b7f8a211e2a2f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Генерация случайной соли для вычисления хэша  <a href="classAuth.html#ad573b4dce5a7e27084b7f8a211e2a2f4">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad573b4dce5a7e27084b7f8a211e2a2f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a007d4b3ef7bf147a5f3b363b110750a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAuth.html#a007d4b3ef7bf147a5f3b363b110750a9">CompareHashes</a> (std::string ClientHash)</td></tr>
+<tr class="memdesc:a007d4b3ef7bf147a5f3b363b110750a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сравнение хэша, присылаемого клиентом и хэша, вычисляемого внутри метода  <a href="classAuth.html#a007d4b3ef7bf147a5f3b363b110750a9">Подробнее...</a><br /></td></tr>
+<tr class="separator:a007d4b3ef7bf147a5f3b363b110750a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecdb012c861f84d05838f12032e1de28"><td class="memItemLeft" align="right" valign="top"><a id="aecdb012c861f84d05838f12032e1de28"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getSALT</b> ()</td></tr>
+<tr class="separator:aecdb012c861f84d05838f12032e1de28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c2c109de414805628106c97668418a1"><td class="memItemLeft" align="right" valign="top"><a id="a7c2c109de414805628106c97668418a1"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> ()</td></tr>
+<tr class="separator:a7c2c109de414805628106c97668418a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fa94505b570f1a804329290b846b032"><td class="memItemLeft" align="right" valign="top"><a id="a0fa94505b570f1a804329290b846b032"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getpass</b> ()</td></tr>
+<tr class="separator:a0fa94505b570f1a804329290b846b032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaea17cf383499998a7b4664fbe408ba"><td class="memItemLeft" align="right" valign="top"><a id="aaaea17cf383499998a7b4664fbe408ba"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getstrHash</b> ()</td></tr>
+<tr class="separator:aaaea17cf383499998a7b4664fbe408ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a3cf930b3ab2f4089ae65a43102d519c0"><td class="memItemLeft" align="right" valign="top"><a id="a3cf930b3ab2f4089ae65a43102d519c0"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAuth.html#a3cf930b3ab2f4089ae65a43102d519c0">ERRmsg</a> [3] = {'E', 'R','R'}</td></tr>
+<tr class="memdesc:a3cf930b3ab2f4089ae65a43102d519c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сообщение, отсылаемое клиенту при ошибке его обрабоки <br /></td></tr>
+<tr class="separator:a3cf930b3ab2f4089ae65a43102d519c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a3b1017666b06966e969c74650a3b6b"><td class="memItemLeft" align="right" valign="top"><a id="a7a3b1017666b06966e969c74650a3b6b"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAuth.html#a7a3b1017666b06966e969c74650a3b6b">OKmsg</a> [2] = {'O', 'K'}</td></tr>
+<tr class="memdesc:a7a3b1017666b06966e969c74650a3b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сообщение, отсылаемое клиенту при успешной авторизации <br /></td></tr>
+<tr class="separator:a7a3b1017666b06966e969c74650a3b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:aebde67b4674d7690f7a81e0682a75354"><td class="memItemLeft" align="right" valign="top"><a id="aebde67b4674d7690f7a81e0682a75354"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAuth.html#aebde67b4674d7690f7a81e0682a75354">SALT</a></td></tr>
+<tr class="memdesc:aebde67b4674d7690f7a81e0682a75354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Соль для вычисления хэша <br /></td></tr>
+<tr class="separator:aebde67b4674d7690f7a81e0682a75354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91903010497e12119190e2407e732d50"><td class="memItemLeft" align="right" valign="top"><a id="a91903010497e12119190e2407e732d50"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAuth.html#a91903010497e12119190e2407e732d50">Id</a></td></tr>
+<tr class="memdesc:a91903010497e12119190e2407e732d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Идентификатор клиента <br /></td></tr>
+<tr class="separator:a91903010497e12119190e2407e732d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41895bda3834ba0350a15b6685a4f5ea"><td class="memItemLeft" align="right" valign="top"><a id="a41895bda3834ba0350a15b6685a4f5ea"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAuth.html#a41895bda3834ba0350a15b6685a4f5ea">password</a></td></tr>
+<tr class="memdesc:a41895bda3834ba0350a15b6685a4f5ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Пароль клиента <br /></td></tr>
+<tr class="separator:a41895bda3834ba0350a15b6685a4f5ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e853ca62a948766919c1cf8712897b0"><td class="memItemLeft" align="right" valign="top"><a id="a8e853ca62a948766919c1cf8712897b0"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAuth.html#a8e853ca62a948766919c1cf8712897b0">strHash</a></td></tr>
+<tr class="memdesc:a8e853ca62a948766919c1cf8712897b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Хэш в виде шестнадцатиричных цифр <br /></td></tr>
+<tr class="separator:a8e853ca62a948766919c1cf8712897b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для аутентификации клиента на сервере </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a19ea0c3de029154f385c4e3815806efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19ea0c3de029154f385c4e3815806efb">&#9670;&nbsp;</a></span>Auth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Auth::Auth </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pass</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор для установки идентификатора и пароля клиента </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ID,идентификатор</td><td>клиента, std::string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pass,пароль</td><td>клиента, std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a007d4b3ef7bf147a5f3b363b110750a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a007d4b3ef7bf147a5f3b363b110750a9">&#9670;&nbsp;</a></span>CompareHashes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Auth::CompareHashes </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ClientHash</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сравнение хэша, присылаемого клиентом и хэша, вычисляемого внутри метода </p>
+<p>Вычисляет MD5 хэш от строки SALT+password и сравнивает его с хэшем, который присылает клиент </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ClientHash,хэш</td><td>клиента, std::string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>bool, если хэши совпадают - true, иначе false </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::server_error</td><td>в случае несовпадения хэшей, штатная <div class="fragment"><div class="line">type = invalid_argument, what =<span class="stringliteral">&quot;Invalid hash&quot;</span></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad573b4dce5a7e27084b7f8a211e2a2f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad573b4dce5a7e27084b7f8a211e2a2f4">&#9670;&nbsp;</a></span>GenSALT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Auth::GenSALT </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Генерация случайной соли для вычисления хэша </p>
+<p>Соль - 64-х разрядное число, представленное в виде строки из 16-ти шестнадцатиричных цифр </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li><a class="el" href="Auth_8h_source.html">Auth.h</a></li>
+<li>Auth.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

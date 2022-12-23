@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Курсовая работа. Программная реализация сетевого сервера: Исходный файл Auth.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Курсовая работа. Программная реализация сетевого сервера
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Однопоточный сервер</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Auth.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Auth_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;ErrorTracker.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classAuth.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAuth.html">Auth</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classAuth.html#aebde67b4674d7690f7a81e0682a75354">   21</a></span>&#160;    std::string <a class="code" href="classAuth.html#aebde67b4674d7690f7a81e0682a75354">SALT</a>; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classAuth.html#a91903010497e12119190e2407e732d50">   22</a></span>&#160;    std::string <a class="code" href="classAuth.html#a91903010497e12119190e2407e732d50">Id</a>; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classAuth.html#a41895bda3834ba0350a15b6685a4f5ea">   23</a></span>&#160;    std::string <a class="code" href="classAuth.html#a41895bda3834ba0350a15b6685a4f5ea">password</a>; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classAuth.html#a8e853ca62a948766919c1cf8712897b0">   24</a></span>&#160;    std::string <a class="code" href="classAuth.html#a8e853ca62a948766919c1cf8712897b0">strHash</a>; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classAuth.html#a19ea0c3de029154f385c4e3815806efb">Auth</a>(std::string ID, std::string pass);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAuth.html#ad573b4dce5a7e27084b7f8a211e2a2f4">GenSALT</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classAuth.html#a3cf930b3ab2f4089ae65a43102d519c0">   43</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classAuth.html#a3cf930b3ab2f4089ae65a43102d519c0">ERRmsg</a>[3] = {<span class="charliteral">&#39;E&#39;</span>, <span class="charliteral">&#39;R&#39;</span>,<span class="charliteral">&#39;R&#39;</span>}; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classAuth.html#a7a3b1017666b06966e969c74650a3b6b">   44</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classAuth.html#a7a3b1017666b06966e969c74650a3b6b">OKmsg</a>[2] = {<span class="charliteral">&#39;O&#39;</span>, <span class="charliteral">&#39;K&#39;</span>}; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classAuth.html#a007d4b3ef7bf147a5f3b363b110750a9">CompareHashes</a>(std::string ClientHash);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::string getSALT() </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classAuth.html#aebde67b4674d7690f7a81e0682a75354">SALT</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::string getId() </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classAuth.html#a91903010497e12119190e2407e732d50">Id</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::string getpass() </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classAuth.html#a41895bda3834ba0350a15b6685a4f5ea">password</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    std::string getstrHash() </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classAuth.html#a8e853ca62a948766919c1cf8712897b0">strHash</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="ttc" id="aclassAuth_html"><div class="ttname"><a href="classAuth.html">Auth</a></div><div class="ttdoc">Класс для аутентификации клиента на сервере</div><div class="ttdef"><b>Definition:</b> Auth.h:18</div></div>
+<div class="ttc" id="aclassAuth_html_a007d4b3ef7bf147a5f3b363b110750a9"><div class="ttname"><a href="classAuth.html#a007d4b3ef7bf147a5f3b363b110750a9">Auth::CompareHashes</a></div><div class="ttdeci">bool CompareHashes(std::string ClientHash)</div><div class="ttdoc">Сравнение хэша, присылаемого клиентом и хэша, вычисляемого внутри метода</div><div class="ttdef"><b>Definition:</b> Auth.cpp:48</div></div>
+<div class="ttc" id="aclassAuth_html_a19ea0c3de029154f385c4e3815806efb"><div class="ttname"><a href="classAuth.html#a19ea0c3de029154f385c4e3815806efb">Auth::Auth</a></div><div class="ttdeci">Auth(std::string ID, std::string pass)</div><div class="ttdoc">Конструктор для установки идентификатора и пароля клиента</div><div class="ttdef"><b>Definition:</b> Auth.cpp:19</div></div>
+<div class="ttc" id="aclassAuth_html_a3cf930b3ab2f4089ae65a43102d519c0"><div class="ttname"><a href="classAuth.html#a3cf930b3ab2f4089ae65a43102d519c0">Auth::ERRmsg</a></div><div class="ttdeci">char ERRmsg[3]</div><div class="ttdoc">Сообщение, отсылаемое клиенту при ошибке его обрабоки</div><div class="ttdef"><b>Definition:</b> Auth.h:43</div></div>
+<div class="ttc" id="aclassAuth_html_a41895bda3834ba0350a15b6685a4f5ea"><div class="ttname"><a href="classAuth.html#a41895bda3834ba0350a15b6685a4f5ea">Auth::password</a></div><div class="ttdeci">std::string password</div><div class="ttdoc">Пароль клиента</div><div class="ttdef"><b>Definition:</b> Auth.h:23</div></div>
+<div class="ttc" id="aclassAuth_html_a7a3b1017666b06966e969c74650a3b6b"><div class="ttname"><a href="classAuth.html#a7a3b1017666b06966e969c74650a3b6b">Auth::OKmsg</a></div><div class="ttdeci">char OKmsg[2]</div><div class="ttdoc">Сообщение, отсылаемое клиенту при успешной авторизации</div><div class="ttdef"><b>Definition:</b> Auth.h:44</div></div>
+<div class="ttc" id="aclassAuth_html_a8e853ca62a948766919c1cf8712897b0"><div class="ttname"><a href="classAuth.html#a8e853ca62a948766919c1cf8712897b0">Auth::strHash</a></div><div class="ttdeci">std::string strHash</div><div class="ttdoc">Хэш в виде шестнадцатиричных цифр</div><div class="ttdef"><b>Definition:</b> Auth.h:24</div></div>
+<div class="ttc" id="aclassAuth_html_a91903010497e12119190e2407e732d50"><div class="ttname"><a href="classAuth.html#a91903010497e12119190e2407e732d50">Auth::Id</a></div><div class="ttdeci">std::string Id</div><div class="ttdoc">Идентификатор клиента</div><div class="ttdef"><b>Definition:</b> Auth.h:22</div></div>
+<div class="ttc" id="aclassAuth_html_ad573b4dce5a7e27084b7f8a211e2a2f4"><div class="ttname"><a href="classAuth.html#ad573b4dce5a7e27084b7f8a211e2a2f4">Auth::GenSALT</a></div><div class="ttdeci">void GenSALT()</div><div class="ttdoc">Генерация случайной соли для вычисления хэша</div><div class="ttdef"><b>Definition:</b> Auth.cpp:25</div></div>
+<div class="ttc" id="aclassAuth_html_aebde67b4674d7690f7a81e0682a75354"><div class="ttname"><a href="classAuth.html#aebde67b4674d7690f7a81e0682a75354">Auth::SALT</a></div><div class="ttdeci">std::string SALT</div><div class="ttdoc">Соль для вычисления хэша</div><div class="ttdef"><b>Definition:</b> Auth.h:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

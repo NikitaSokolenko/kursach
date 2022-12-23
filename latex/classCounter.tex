@@ -1,0 +1,61 @@
+\hypertarget{classCounter}{}\doxysubsection{Класс Counter}
+\label{classCounter}\index{Counter@{Counter}}
+
+
+Класс для вычислений по вектору  
+
+
+
+
+{\ttfamily \#include $<$Counter.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int16\+\_\+t $\ast$ \mbox{\hyperlink{classCounter_aa537bd6adc3a27359bf5b292ef705b85}{mean}} (std\+::vector$<$ int16\+\_\+t $>$ arr)
+\begin{DoxyCompactList}\small\item\em Конструктор без параметров \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCounter_a1abd18ad19f815dc5e0aa1ccfde9ab69}\label{classCounter_a1abd18ad19f815dc5e0aa1ccfde9ab69}} 
+int16\+\_\+t \mbox{\hyperlink{classCounter_a1abd18ad19f815dc5e0aa1ccfde9ab69}{result}} \mbox{[}1\mbox{]}
+\begin{DoxyCompactList}\small\item\em Результат вычислений \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Подробное описание}
+Класс для вычислений по вектору 
+
+\doxysubsubsection{Методы}
+\mbox{\Hypertarget{classCounter_aa537bd6adc3a27359bf5b292ef705b85}\label{classCounter_aa537bd6adc3a27359bf5b292ef705b85}} 
+\index{Counter@{Counter}!mean@{mean}}
+\index{mean@{mean}!Counter@{Counter}}
+\doxyparagraph{\texorpdfstring{mean()}{mean()}}
+{\footnotesize\ttfamily int16\+\_\+t$\ast$ Counter\+::mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int16\+\_\+t $>$}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор без параметров 
+
+Вычисляет среднее арифметическое по вектору 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em arr,вектор,std\+::vector$<$int16\+\_\+t$>$} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+указатель на массив с результатом, int16\+\_\+t $\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::server\+\_\+error} & в случае ошибки, критическая 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Count Error"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Counter.\+h\end{DoxyCompactItemize}

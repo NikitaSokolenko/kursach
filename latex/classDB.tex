@@ -1,0 +1,93 @@
+\hypertarget{classDB}{}\doxysubsection{Класс DB}
+\label{classDB}\index{DB@{DB}}
+
+
+Класс для работы с базой данных пользователей  
+
+
+
+
+{\ttfamily \#include $<$Data\+Base.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDB_ad45673965c6ca8e85a360c42390ea18c}{DB}} (std\+::string DBName)
+\begin{DoxyCompactList}\small\item\em Конструктор, в котором считывается база данных и сохраняется в словарь \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDB_a77ffd17e79f26fe962b659b5aabc75d2}{IDcheck}} (std\+::string login)
+\begin{DoxyCompactList}\small\item\em Проверка наличия идентификатора клиента в базе данных \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDB_a5aae0f601a683e15749128cf6f6bce28}\label{classDB_a5aae0f601a683e15749128cf6f6bce28}} 
+std\+::map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classDB_a5aae0f601a683e15749128cf6f6bce28}{Data\+BaseP}}
+\begin{DoxyCompactList}\small\item\em Словарь с парами идентификатор\+:пароль \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDB_af73807307043f35fc58efe8fbf58bb59}\label{classDB_af73807307043f35fc58efe8fbf58bb59}} 
+char \mbox{\hyperlink{classDB_af73807307043f35fc58efe8fbf58bb59}{sep}} = \textquotesingle{} \textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Разделитель идентификатора и пароля в базе данных \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Подробное описание}
+Класс для работы с базой данных пользователей 
+
+\doxysubsubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classDB_ad45673965c6ca8e85a360c42390ea18c}\label{classDB_ad45673965c6ca8e85a360c42390ea18c}} 
+\index{DB@{DB}!DB@{DB}}
+\index{DB@{DB}!DB@{DB}}
+\doxyparagraph{\texorpdfstring{DB()}{DB()}}
+{\footnotesize\ttfamily DB\+::\+DB (\begin{DoxyParamCaption}\item[{std\+::string}]{DBName }\end{DoxyParamCaption})}
+
+
+
+Конструктор, в котором считывается база данных и сохраняется в словарь 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em DBName,путь} & к файлу с базой данных, std\+::string. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::server\+\_\+error} & в случае проблем с файлом базы данных, критическая \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsubsection{Методы}
+\mbox{\Hypertarget{classDB_a77ffd17e79f26fe962b659b5aabc75d2}\label{classDB_a77ffd17e79f26fe962b659b5aabc75d2}} 
+\index{DB@{DB}!IDcheck@{IDcheck}}
+\index{IDcheck@{IDcheck}!DB@{DB}}
+\doxyparagraph{\texorpdfstring{IDcheck()}{IDcheck()}}
+{\footnotesize\ttfamily bool DB\+::\+IDcheck (\begin{DoxyParamCaption}\item[{std\+::string}]{login }\end{DoxyParamCaption})}
+
+
+
+Проверка наличия идентификатора клиента в базе данных 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em login,идентификатора} & клиента, std\+::string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool, если идентификатор есть в базе -\/ true, иначе false 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::server\+\_\+error} & в случае отсутствия идентификатора в базе, штатная 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Invalid ID"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Data\+Base.\+h\item 
+Data\+Base.\+cpp\end{DoxyCompactItemize}

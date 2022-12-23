@@ -4,13 +4,27 @@
 #include <exception>
 #include "ErrorTracker.h"
 
+/**
+@brief Класс для вычислений по вектору
+*/
 
 class Counter
 {
 private:
-int16_t result[1];
+int16_t result[1]; ///< Результат вычислений
 public:
-    Counter(){};
+    Counter(){}; ///<Конструктор без параметров
+
+/** 
+ @brief Вычисляет среднее арифметическое по вектору
+ @param [in] arr, вектор, std::vector<int16_t>
+ @return указатель на массив с результатом, int16_t *
+ @throw std::server_error в случае ошибки, критическая
+ @code 
+ type = invalid_argument, what ="Count Error"
+ @endcode
+*/
+
     int16_t * mean(std::vector<int16_t> arr)
     {
 		try{
@@ -23,8 +37,8 @@ public:
         }
         result[0] = avg;
 		}catch(std::exception &e){
-			throw server_error(std::string("Invalid ID"), true);
-			exit(1);}									
+			throw server_error(std::string("Count Error"), true);
+			}									
         return result;
     }
 };

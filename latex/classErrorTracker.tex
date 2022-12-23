@@ -1,0 +1,63 @@
+\hypertarget{classErrorTracker}{}\doxysubsection{Класс Error\+Tracker}
+\label{classErrorTracker}\index{ErrorTracker@{ErrorTracker}}
+
+
+Класс для обработки ошибок  
+
+
+
+
+{\ttfamily \#include $<$Error\+Tracker.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classErrorTracker_aa9ee4476dc99046a2e782c182c1d0995}{set\+Log\+Name}} (std\+::string Log\+Name)
+\begin{DoxyCompactList}\small\item\em Конструктор без параметров \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classErrorTracker_a7667512c5014b01f0709851fa26647ac}{write\+\_\+log}} (std\+::string what, bool Critical)
+\begin{DoxyCompactList}\small\item\em Запись ошибки в лог \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classErrorTracker_a2f4c0e3f4d17d022b32be89cc8223264}\label{classErrorTracker_a2f4c0e3f4d17d022b32be89cc8223264}} 
+std\+::string \mbox{\hyperlink{classErrorTracker_a2f4c0e3f4d17d022b32be89cc8223264}{Log\+File\+Name}}
+\begin{DoxyCompactList}\small\item\em Путь к файлу с логом ошибок \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Подробное описание}
+Класс для обработки ошибок 
+
+\doxysubsubsection{Методы}
+\mbox{\Hypertarget{classErrorTracker_aa9ee4476dc99046a2e782c182c1d0995}\label{classErrorTracker_aa9ee4476dc99046a2e782c182c1d0995}} 
+\index{ErrorTracker@{ErrorTracker}!setLogName@{setLogName}}
+\index{setLogName@{setLogName}!ErrorTracker@{ErrorTracker}}
+\doxyparagraph{\texorpdfstring{setLogName()}{setLogName()}}
+{\footnotesize\ttfamily void Error\+Tracker\+::set\+Log\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{Log\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор без параметров 
+
+Функция, устанавливающая путь к файлу с логом ошибок \mbox{\Hypertarget{classErrorTracker_a7667512c5014b01f0709851fa26647ac}\label{classErrorTracker_a7667512c5014b01f0709851fa26647ac}} 
+\index{ErrorTracker@{ErrorTracker}!write\_log@{write\_log}}
+\index{write\_log@{write\_log}!ErrorTracker@{ErrorTracker}}
+\doxyparagraph{\texorpdfstring{write\_log()}{write\_log()}}
+{\footnotesize\ttfamily void Error\+Tracker\+::write\+\_\+log (\begin{DoxyParamCaption}\item[{std\+::string}]{what,  }\item[{bool}]{Critical }\end{DoxyParamCaption})}
+
+
+
+Запись ошибки в лог 
+
+Записывает время, тип и критичность ошибки 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em what,тип} & ошибки, std\+::string \\
+\hline
+\mbox{\texttt{ in}}  & {\em Critical,критичность} & ошибки (Критическая -\/ true, Штатная -\/ false), std\+::string \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Error\+Tracker.\+h\item 
+Error\+Tracker.\+cpp\end{DoxyCompactItemize}

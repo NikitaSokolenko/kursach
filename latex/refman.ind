@@ -1,0 +1,86 @@
+\begin{theindex}
+
+  \item {accepting}
+    \subitem {WebManager}, \hyperpage{13}
+  \item {Auth}, \hyperpage{3}
+    \subitem {Auth}, \hyperpage{4}
+    \subitem {CompareHashes}, \hyperpage{4}
+    \subitem {GenSALT}, \hyperpage{4}
+  \item {Auth.h}, \hyperpage{15}
+
+  \indexspace
+
+  \item {CheckFiles}
+    \subitem {Opts}, \hyperpage{10}
+  \item {CompareHashes}
+    \subitem {Auth}, \hyperpage{4}
+  \item {Counter}, \hyperpage{5}
+    \subitem {mean}, \hyperpage{5}
+
+  \indexspace
+
+  \item {DB}, \hyperpage{6}
+    \subitem {DB}, \hyperpage{6}
+    \subitem {IDcheck}, \hyperpage{7}
+
+  \indexspace
+
+  \item {ErrorTracker}, \hyperpage{7}
+    \subitem {setLogName}, \hyperpage{8}
+    \subitem {write\_log}, \hyperpage{8}
+
+  \indexspace
+
+  \item {GenSALT}
+    \subitem {Auth}, \hyperpage{4}
+
+  \indexspace
+
+  \item {IDcheck}
+    \subitem {DB}, \hyperpage{7}
+
+  \indexspace
+
+  \item {mean}
+    \subitem {Counter}, \hyperpage{5}
+
+  \indexspace
+
+  \item {new\_bind}
+    \subitem {WebManager}, \hyperpage{13}
+
+  \indexspace
+
+  \item {Opts}, \hyperpage{8}
+    \subitem {CheckFiles}, \hyperpage{10}
+    \subitem {Opts}, \hyperpage{9}
+
+  \indexspace
+
+  \item {receiving}
+    \subitem {WebManager}, \hyperpage{14}
+
+  \indexspace
+
+  \item {sending}
+    \subitem {WebManager}, \hyperpage{14}
+  \item {server\_error}, \hyperpage{10}
+    \subitem {server\_error}, \hyperpage{11, 12}
+  \item {setLogName}
+    \subitem {ErrorTracker}, \hyperpage{8}
+  \item {start\_listening}
+    \subitem {WebManager}, \hyperpage{15}
+
+  \indexspace
+
+  \item {WebManager}, \hyperpage{12}
+    \subitem {accepting}, \hyperpage{13}
+    \subitem {new\_bind}, \hyperpage{13}
+    \subitem {receiving}, \hyperpage{14}
+    \subitem {sending}, \hyperpage{14}
+    \subitem {start\_listening}, \hyperpage{15}
+    \subitem {WebManager}, \hyperpage{13}
+  \item {write\_log}
+    \subitem {ErrorTracker}, \hyperpage{8}
+
+\end{theindex}

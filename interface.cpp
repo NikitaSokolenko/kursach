@@ -8,8 +8,6 @@
 #include <exception>
 #include "ErrorTracker.h"
 
-extern ErrorTracker ErrTr;
-
 using namespace std;
 
 Opts::Opts(int argc, char **argv)
@@ -42,25 +40,16 @@ void Opts::usage(const char* progName)
 
 bool Opts::CheckFiles()
 {
-    try {
         std::ifstream file1(DataBaseName);
         if (!file1.good()) {
             throw std::invalid_argument(std::string("Wrong DB File Name"));
+			return false;
         }
-    } catch(std::exception& e) {
-        ErrTr.write_log(e.what(), true);
-        exit(1);
-    }
-    try {
         std::ifstream file2(LogFileName);
         if (!file2.good()) {
             throw std::invalid_argument(std::string("Wrong Log File Name"));
-        }
-    } catch(std::exception& e) {
-        ErrTr.write_log(e.what(), true);
-        exit(1);
-    }
+			return false;
+		}
 
-
-    return true;
+    	return true;
 }

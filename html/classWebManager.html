@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Курсовая работа. Программная реализация сетевого сервера: Класс WebManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Курсовая работа. Программная реализация сетевого сервера
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Однопоточный сервер</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="classWebManager-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс WebManager</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс, обеспечивающий работу с сокетами и сетовое взаимодействие  
+ <a href="classWebManager.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="WebManager_8h_source.html">WebManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a61d581b915083667485faa0704ecd9ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebManager.html#a61d581b915083667485faa0704ecd9ca">WebManager</a> (unsigned int port)</td></tr>
+<tr class="memdesc:a61d581b915083667485faa0704ecd9ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор  <a href="classWebManager.html#a61d581b915083667485faa0704ecd9ca">Подробнее...</a><br /></td></tr>
+<tr class="separator:a61d581b915083667485faa0704ecd9ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c47dc47ee0b2500d7e33e23de571d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebManager.html#a00c47dc47ee0b2500d7e33e23de571d6">start_listening</a> ()</td></tr>
+<tr class="memdesc:a00c47dc47ee0b2500d7e33e23de571d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установка сокета в режим ожидания  <a href="classWebManager.html#a00c47dc47ee0b2500d7e33e23de571d6">Подробнее...</a><br /></td></tr>
+<tr class="separator:a00c47dc47ee0b2500d7e33e23de571d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09b427748c37346312d0efceae34c78a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebManager.html#a09b427748c37346312d0efceae34c78a">new_bind</a> ()</td></tr>
+<tr class="memdesc:a09b427748c37346312d0efceae34c78a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Привязка сокета к адресу  <a href="classWebManager.html#a09b427748c37346312d0efceae34c78a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a09b427748c37346312d0efceae34c78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2a507c61ab8f3e0401c33ae160f782e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebManager.html#ab2a507c61ab8f3e0401c33ae160f782e">accepting</a> ()</td></tr>
+<tr class="memdesc:ab2a507c61ab8f3e0401c33ae160f782e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приём соединения  <a href="classWebManager.html#ab2a507c61ab8f3e0401c33ae160f782e">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab2a507c61ab8f3e0401c33ae160f782e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a876ae11495f522e8c48cf10550857d05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebManager.html#a876ae11495f522e8c48cf10550857d05">receiving</a> (int sock, void *buf, int size)</td></tr>
+<tr class="memdesc:a876ae11495f522e8c48cf10550857d05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приём данных  <a href="classWebManager.html#a876ae11495f522e8c48cf10550857d05">Подробнее...</a><br /></td></tr>
+<tr class="separator:a876ae11495f522e8c48cf10550857d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaec4039b1bbd927cc21180978368fad9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebManager.html#aaec4039b1bbd927cc21180978368fad9">sending</a> (int sock, void *buf, int sizeb)</td></tr>
+<tr class="memdesc:aaec4039b1bbd927cc21180978368fad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправка данных  <a href="classWebManager.html#aaec4039b1bbd927cc21180978368fad9">Подробнее...</a><br /></td></tr>
+<tr class="separator:aaec4039b1bbd927cc21180978368fad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a003d052297460b68e743cb846d6ce76d"><td class="memItemLeft" align="right" valign="top"><a id="a003d052297460b68e743cb846d6ce76d"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebManager.html#a003d052297460b68e743cb846d6ce76d">Port</a></td></tr>
+<tr class="memdesc:a003d052297460b68e743cb846d6ce76d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Порт, на котором работает сервер <br /></td></tr>
+<tr class="separator:a003d052297460b68e743cb846d6ce76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ab293fbe3050c508e04fcac8c9bf74d"><td class="memItemLeft" align="right" valign="top"><a id="a3ab293fbe3050c508e04fcac8c9bf74d"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebManager.html#a3ab293fbe3050c508e04fcac8c9bf74d">Adress</a> = &quot;127.0.0.1&quot;</td></tr>
+<tr class="memdesc:a3ab293fbe3050c508e04fcac8c9bf74d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сетевой адрес сервера <br /></td></tr>
+<tr class="separator:a3ab293fbe3050c508e04fcac8c9bf74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07cb7db305f3d585b8c9fb64cd92cf7e"><td class="memItemLeft" align="right" valign="top"><a id="a07cb7db305f3d585b8c9fb64cd92cf7e"></a>
+struct sockaddr_in&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebManager.html#a07cb7db305f3d585b8c9fb64cd92cf7e">addr</a></td></tr>
+<tr class="memdesc:a07cb7db305f3d585b8c9fb64cd92cf7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура sockaddr_in. <br /></td></tr>
+<tr class="separator:a07cb7db305f3d585b8c9fb64cd92cf7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3182332d6346a3a3d4d1d3b122a5332"><td class="memItemLeft" align="right" valign="top"><a id="ab3182332d6346a3a3d4d1d3b122a5332"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebManager.html#ab3182332d6346a3a3d4d1d3b122a5332">listener</a></td></tr>
+<tr class="memdesc:ab3182332d6346a3a3d4d1d3b122a5332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Основной сокет <br /></td></tr>
+<tr class="separator:ab3182332d6346a3a3d4d1d3b122a5332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс, обеспечивающий работу с сокетами и сетовое взаимодействие </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a61d581b915083667485faa0704ecd9ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61d581b915083667485faa0704ecd9ca">&#9670;&nbsp;</a></span>WebManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WebManager::WebManager </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор </p>
+<p>Устанавливает порт, инициализирует основной сокет и структуру sockaddr_in </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">port,порт,на</td><td>котором работает сервер, int. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::server_error</td><td>в случае ошибки, критическая <div class="fragment"><div class="line">type = invalid_argument, what =<span class="stringliteral">&quot;Socket creation error&quot;</span></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="ab2a507c61ab8f3e0401c33ae160f782e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2a507c61ab8f3e0401c33ae160f782e">&#9670;&nbsp;</a></span>accepting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WebManager::accepting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Приём соединения </p>
+<dl class="section return"><dt>Возвращает</dt><dd>код сокета, int </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::server_error</td><td>в случае ошибки, штатная <div class="fragment"><div class="line">type = invalid_argument, what =<span class="stringliteral">&quot;Accepting error&quot;</span></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a09b427748c37346312d0efceae34c78a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09b427748c37346312d0efceae34c78a">&#9670;&nbsp;</a></span>new_bind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WebManager::new_bind </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Привязка сокета к адресу </p>
+<dl class="section return"><dt>Возвращает</dt><dd>код сокета, int </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::server_error</td><td>в случае ошибки, критическая <div class="fragment"><div class="line">type = invalid_argument, what =<span class="stringliteral">&quot;Socket bind error&quot;</span></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a876ae11495f522e8c48cf10550857d05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a876ae11495f522e8c48cf10550857d05">&#9670;&nbsp;</a></span>receiving()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WebManager::receiving </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Приём данных </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sock,сокет,int</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf,буфер</td><td>для данных, void* </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size,размер</td><td>буфера, int </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>количество полученных байт, int </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::server_error</td><td>в случае ошибки, штатная <div class="fragment"><div class="line">type = invalid_argument, what =<span class="stringliteral">&quot;Receiving error&quot;</span></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaec4039b1bbd927cc21180978368fad9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaec4039b1bbd927cc21180978368fad9">&#9670;&nbsp;</a></span>sending()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WebManager::sending </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sizeb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отправка данных </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sock,сокет,int</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf,буфер</td><td>с данными, void* </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sizeb,количество</td><td>отправляемых байт, int </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::server_error</td><td>в случае ошибки, штатная <div class="fragment"><div class="line">type = invalid_argument, what =<span class="stringliteral">&quot;Sending error&quot;</span></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a00c47dc47ee0b2500d7e33e23de571d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00c47dc47ee0b2500d7e33e23de571d6">&#9670;&nbsp;</a></span>start_listening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WebManager::start_listening </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Установка сокета в режим ожидания </p>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::server_error</td><td>в случае ошибки, критическая <div class="fragment"><div class="line">type = invalid_argument, what =<span class="stringliteral">&quot;Listening error&quot;</span></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li><a class="el" href="WebManager_8h_source.html">WebManager.h</a></li>
+<li>WebManager.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

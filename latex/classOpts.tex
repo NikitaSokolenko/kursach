@@ -1,0 +1,100 @@
+\hypertarget{classOpts}{}\doxysubsection{Класс Opts}
+\label{classOpts}\index{Opts@{Opts}}
+
+
+Класс для получения параметров коммандной строки  
+
+
+
+
+{\ttfamily \#include $<$interface.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOpts_a64bcc621164853c859e49dbea9164430}{Opts}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Конструктор, внутри которого считываются параметры командной строки \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classOpts_a73d2c2746a037f1a4dd7eb7c96d17eec}{Check\+Files}} ()
+\begin{DoxyCompactList}\small\item\em Проверка роботоспособности файлов базы данных и лога \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOpts_a9d22c4c69781db2b343330a0dbd286f0}\label{classOpts_a9d22c4c69781db2b343330a0dbd286f0}} 
+string {\bfseries get\+Data\+Base\+Name} ()
+\item 
+\mbox{\Hypertarget{classOpts_aeabb1a3f3dfc7e67e0227afed077157a}\label{classOpts_aeabb1a3f3dfc7e67e0227afed077157a}} 
+string {\bfseries get\+Log\+File\+Name} ()
+\item 
+\mbox{\Hypertarget{classOpts_a18f470666bb637875d3006a004fb2380}\label{classOpts_a18f470666bb637875d3006a004fb2380}} 
+int {\bfseries get\+Port} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOpts_a0e2242eff10cbb9661530e4f16cdfc29}\label{classOpts_a0e2242eff10cbb9661530e4f16cdfc29}} 
+void \mbox{\hyperlink{classOpts_a0e2242eff10cbb9661530e4f16cdfc29}{usage}} (const char $\ast$prog\+Name)
+\begin{DoxyCompactList}\small\item\em вывод подсказки и останов \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOpts_ad7e2d6d3b339e022e7c9c3bded031f5a}\label{classOpts_ad7e2d6d3b339e022e7c9c3bded031f5a}} 
+string \mbox{\hyperlink{classOpts_ad7e2d6d3b339e022e7c9c3bded031f5a}{Data\+Base\+Name}} = \char`\"{}DB.\+txt\char`\"{}
+\begin{DoxyCompactList}\small\item\em Путь к файлу с базой данных \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOpts_a71a30ead33ded5726a5f2c9478e37d0d}\label{classOpts_a71a30ead33ded5726a5f2c9478e37d0d}} 
+string \mbox{\hyperlink{classOpts_a71a30ead33ded5726a5f2c9478e37d0d}{Log\+File\+Name}} = \char`\"{}log.\+txt\char`\"{}
+\begin{DoxyCompactList}\small\item\em Путь к файлу для записи логов \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOpts_aeaa5af21458662d1bec6a436847ef01d}\label{classOpts_aeaa5af21458662d1bec6a436847ef01d}} 
+int \mbox{\hyperlink{classOpts_aeaa5af21458662d1bec6a436847ef01d}{Port}} = 33333
+\begin{DoxyCompactList}\small\item\em Порт, на котором работает сервер \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Подробное описание}
+Класс для получения параметров коммандной строки 
+
+\doxysubsubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classOpts_a64bcc621164853c859e49dbea9164430}\label{classOpts_a64bcc621164853c859e49dbea9164430}} 
+\index{Opts@{Opts}!Opts@{Opts}}
+\index{Opts@{Opts}!Opts@{Opts}}
+\doxyparagraph{\texorpdfstring{Opts()}{Opts()}}
+{\footnotesize\ttfamily Opts\+::\+Opts (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Конструктор, внутри которого считываются параметры командной строки 
+
+Параметры командной строки\+: 1)-\/b Путь к файлу с базой данных, необязательный 2)-\/l Путь к файлу для записи логов, необязательный 3)-\/p Порт, на котором работает сервер, необязательный 4)-\/h вызов подсказки При ошибках в параметрах вызывается справка и программа завершает работу 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em int} & argc \\
+\hline
+\mbox{\texttt{ in}}  & {\em char} & $\ast$$\ast$argv \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Методы}
+\mbox{\Hypertarget{classOpts_a73d2c2746a037f1a4dd7eb7c96d17eec}\label{classOpts_a73d2c2746a037f1a4dd7eb7c96d17eec}} 
+\index{Opts@{Opts}!CheckFiles@{CheckFiles}}
+\index{CheckFiles@{CheckFiles}!Opts@{Opts}}
+\doxyparagraph{\texorpdfstring{CheckFiles()}{CheckFiles()}}
+{\footnotesize\ttfamily bool Opts\+::\+Check\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Проверка роботоспособности файлов базы данных и лога 
+
+\begin{DoxyReturn}{Возвращает}
+bool, если нет ошибок в фалах -\/ true, иначе false 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::invalid\+\_\+argument} & в случае проблем с файлами, критическая 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Wrong DB File Name"{}} или what =\textcolor{stringliteral}{"{}Wrong Log File Name"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+interface.\+h\item 
+interface.\+cpp\end{DoxyCompactItemize}

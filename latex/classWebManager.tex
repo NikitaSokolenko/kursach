@@ -1,0 +1,208 @@
+\hypertarget{classWebManager}{}\doxysubsection{Класс Web\+Manager}
+\label{classWebManager}\index{WebManager@{WebManager}}
+
+
+Класс, обеспечивающий работу с сокетами и сетовое взаимодействие  
+
+
+
+
+{\ttfamily \#include $<$Web\+Manager.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebManager_a61d581b915083667485faa0704ecd9ca}{Web\+Manager}} (unsigned int port)
+\begin{DoxyCompactList}\small\item\em Конструктор \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebManager_a00c47dc47ee0b2500d7e33e23de571d6}{start\+\_\+listening}} ()
+\begin{DoxyCompactList}\small\item\em Установка сокета в режим ожидания \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWebManager_a09b427748c37346312d0efceae34c78a}{new\+\_\+bind}} ()
+\begin{DoxyCompactList}\small\item\em Привязка сокета к адресу \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWebManager_ab2a507c61ab8f3e0401c33ae160f782e}{accepting}} ()
+\begin{DoxyCompactList}\small\item\em Приём соединения \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWebManager_a876ae11495f522e8c48cf10550857d05}{receiving}} (int sock, void $\ast$buf, int size)
+\begin{DoxyCompactList}\small\item\em Приём данных \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebManager_aaec4039b1bbd927cc21180978368fad9}{sending}} (int sock, void $\ast$buf, int sizeb)
+\begin{DoxyCompactList}\small\item\em Отправка данных \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebManager_a003d052297460b68e743cb846d6ce76d}\label{classWebManager_a003d052297460b68e743cb846d6ce76d}} 
+unsigned int \mbox{\hyperlink{classWebManager_a003d052297460b68e743cb846d6ce76d}{Port}}
+\begin{DoxyCompactList}\small\item\em Порт, на котором работает сервер \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebManager_a3ab293fbe3050c508e04fcac8c9bf74d}\label{classWebManager_a3ab293fbe3050c508e04fcac8c9bf74d}} 
+const char $\ast$ \mbox{\hyperlink{classWebManager_a3ab293fbe3050c508e04fcac8c9bf74d}{Adress}} = \char`\"{}127.\+0.\+0.\+1\char`\"{}
+\begin{DoxyCompactList}\small\item\em Сетевой адрес сервера \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebManager_a07cb7db305f3d585b8c9fb64cd92cf7e}\label{classWebManager_a07cb7db305f3d585b8c9fb64cd92cf7e}} 
+struct sockaddr\+\_\+in \mbox{\hyperlink{classWebManager_a07cb7db305f3d585b8c9fb64cd92cf7e}{addr}}
+\begin{DoxyCompactList}\small\item\em Структура sockaddr\+\_\+in. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebManager_ab3182332d6346a3a3d4d1d3b122a5332}\label{classWebManager_ab3182332d6346a3a3d4d1d3b122a5332}} 
+int \mbox{\hyperlink{classWebManager_ab3182332d6346a3a3d4d1d3b122a5332}{listener}}
+\begin{DoxyCompactList}\small\item\em Основной сокет \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Подробное описание}
+Класс, обеспечивающий работу с сокетами и сетовое взаимодействие 
+
+\doxysubsubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classWebManager_a61d581b915083667485faa0704ecd9ca}\label{classWebManager_a61d581b915083667485faa0704ecd9ca}} 
+\index{WebManager@{WebManager}!WebManager@{WebManager}}
+\index{WebManager@{WebManager}!WebManager@{WebManager}}
+\doxyparagraph{\texorpdfstring{WebManager()}{WebManager()}}
+{\footnotesize\ttfamily Web\+Manager\+::\+Web\+Manager (\begin{DoxyParamCaption}\item[{unsigned int}]{port }\end{DoxyParamCaption})}
+
+
+
+Конструктор 
+
+Устанавливает порт, инициализирует основной сокет и структуру sockaddr\+\_\+in 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em port,порт,на} & котором работает сервер, int. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::server\+\_\+error} & в случае ошибки, критическая 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Socket creation error"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsubsection{Методы}
+\mbox{\Hypertarget{classWebManager_ab2a507c61ab8f3e0401c33ae160f782e}\label{classWebManager_ab2a507c61ab8f3e0401c33ae160f782e}} 
+\index{WebManager@{WebManager}!accepting@{accepting}}
+\index{accepting@{accepting}!WebManager@{WebManager}}
+\doxyparagraph{\texorpdfstring{accepting()}{accepting()}}
+{\footnotesize\ttfamily int Web\+Manager\+::accepting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Приём соединения 
+
+\begin{DoxyReturn}{Возвращает}
+код сокета, int 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::server\+\_\+error} & в случае ошибки, штатная 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Accepting error"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classWebManager_a09b427748c37346312d0efceae34c78a}\label{classWebManager_a09b427748c37346312d0efceae34c78a}} 
+\index{WebManager@{WebManager}!new\_bind@{new\_bind}}
+\index{new\_bind@{new\_bind}!WebManager@{WebManager}}
+\doxyparagraph{\texorpdfstring{new\_bind()}{new\_bind()}}
+{\footnotesize\ttfamily int Web\+Manager\+::new\+\_\+bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Привязка сокета к адресу 
+
+\begin{DoxyReturn}{Возвращает}
+код сокета, int 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::server\+\_\+error} & в случае ошибки, критическая 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Socket bind error"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classWebManager_a876ae11495f522e8c48cf10550857d05}\label{classWebManager_a876ae11495f522e8c48cf10550857d05}} 
+\index{WebManager@{WebManager}!receiving@{receiving}}
+\index{receiving@{receiving}!WebManager@{WebManager}}
+\doxyparagraph{\texorpdfstring{receiving()}{receiving()}}
+{\footnotesize\ttfamily int Web\+Manager\+::receiving (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{void $\ast$}]{buf,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Приём данных 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em sock,сокет,int} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em buf,буфер} & для данных, void$\ast$ \\
+\hline
+\mbox{\texttt{ in}}  & {\em size,размер} & буфера, int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+количество полученных байт, int 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::server\+\_\+error} & в случае ошибки, штатная 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Receiving error"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classWebManager_aaec4039b1bbd927cc21180978368fad9}\label{classWebManager_aaec4039b1bbd927cc21180978368fad9}} 
+\index{WebManager@{WebManager}!sending@{sending}}
+\index{sending@{sending}!WebManager@{WebManager}}
+\doxyparagraph{\texorpdfstring{sending()}{sending()}}
+{\footnotesize\ttfamily void Web\+Manager\+::sending (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{void $\ast$}]{buf,  }\item[{int}]{sizeb }\end{DoxyParamCaption})}
+
+
+
+Отправка данных 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em sock,сокет,int} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em buf,буфер} & с данными, void$\ast$ \\
+\hline
+\mbox{\texttt{ in}}  & {\em sizeb,количество} & отправляемых байт, int \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::server\+\_\+error} & в случае ошибки, штатная 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Sending error"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classWebManager_a00c47dc47ee0b2500d7e33e23de571d6}\label{classWebManager_a00c47dc47ee0b2500d7e33e23de571d6}} 
+\index{WebManager@{WebManager}!start\_listening@{start\_listening}}
+\index{start\_listening@{start\_listening}!WebManager@{WebManager}}
+\doxyparagraph{\texorpdfstring{start\_listening()}{start\_listening()}}
+{\footnotesize\ttfamily void Web\+Manager\+::start\+\_\+listening (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Установка сокета в режим ожидания 
+
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::server\+\_\+error} & в случае ошибки, критическая 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Listening error"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Web\+Manager.\+h\item 
+Web\+Manager.\+cpp\end{DoxyCompactItemize}

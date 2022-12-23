@@ -1,0 +1,92 @@
+\hypertarget{classserver__error}{}\doxysubsection{Класс server\+\_\+error}
+\label{classserver__error}\index{server\_error@{server\_error}}
+
+
+Класс ошибок  
+
+
+
+
+{\ttfamily \#include $<$Error\+Tracker.\+h$>$}
+
+
+
+Граф наследования\+:server\+\_\+error\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classserver__error__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Граф связей класса server\+\_\+error\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classserver__error__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classserver__error_a6edaa1849f3e8493c16f780e8bf80f8c}{server\+\_\+error}} (const std\+::string \&what\+\_\+arg, bool critical=false)
+\begin{DoxyCompactList}\small\item\em Конструктор ошибок с строкой в качестве параметра \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classserver__error_aef29d5decd20d66b996f04eebacb7615}{server\+\_\+error}} (const char $\ast$what\+\_\+arg, bool critical=false)
+\begin{DoxyCompactList}\small\item\em Конструктор ошибок с си-\/строкой в качестве параметра \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classserver__error_a8bc9cd118e304db2a79ef4fb61c3d2f5}\label{classserver__error_a8bc9cd118e304db2a79ef4fb61c3d2f5}} 
+bool \mbox{\hyperlink{classserver__error_a8bc9cd118e304db2a79ef4fb61c3d2f5}{get\+State}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает статус критичности ошибки \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classserver__error_aafc8f5fee12e39bff4cf6164f33c7b9d}\label{classserver__error_aafc8f5fee12e39bff4cf6164f33c7b9d}} 
+bool \mbox{\hyperlink{classserver__error_aafc8f5fee12e39bff4cf6164f33c7b9d}{State}} = false
+\begin{DoxyCompactList}\small\item\em Статус критичности ошибки \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Подробное описание}
+Класс ошибок 
+
+Наследует от класса std\+::invalid\+\_\+argument 
+
+\doxysubsubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classserver__error_a6edaa1849f3e8493c16f780e8bf80f8c}\label{classserver__error_a6edaa1849f3e8493c16f780e8bf80f8c}} 
+\index{server\_error@{server\_error}!server\_error@{server\_error}}
+\index{server\_error@{server\_error}!server\_error@{server\_error}}
+\doxyparagraph{\texorpdfstring{server\_error()}{server\_error()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily server\+\_\+error\+::server\+\_\+error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{what\+\_\+arg,  }\item[{bool}]{critical = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Конструктор ошибок с строкой в качестве параметра 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em what\+\_\+arg,тип} & ошибки, const std\+::string. \\
+\hline
+\mbox{\texttt{ in}}  & {\em critical,критическа} & ошибка -\/ true, штатная -\/ false, bool \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classserver__error_aef29d5decd20d66b996f04eebacb7615}\label{classserver__error_aef29d5decd20d66b996f04eebacb7615}} 
+\index{server\_error@{server\_error}!server\_error@{server\_error}}
+\index{server\_error@{server\_error}!server\_error@{server\_error}}
+\doxyparagraph{\texorpdfstring{server\_error()}{server\_error()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily server\+\_\+error\+::server\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{what\+\_\+arg,  }\item[{bool}]{critical = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Конструктор ошибок с си-\/строкой в качестве параметра 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em what\+\_\+arg,тип} & ошибки, const char$\ast$. \\
+\hline
+\mbox{\texttt{ in}}  & {\em critical,критическа} & ошибка -\/ true, штатная -\/ false, bool \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Error\+Tracker.\+h\end{DoxyCompactItemize}

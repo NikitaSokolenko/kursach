@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Курсовая работа. Программная реализация сетевого сервера: Исходный файл conversation.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Курсовая работа. Программная реализация сетевого сервера
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Однопоточный сервер</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">conversation.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;interface.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Auth_8h.html">Auth.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;Counter.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;DataBase.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;WebManager.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;ErrorTracker.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> conversation(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> port, std::string LogName, <a class="code" href="classDB.html">DB</a> new_db, <span class="keywordtype">int</span> sock)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">try</span>{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classWebManager.html">WebManager</a> new_manager(port);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">char</span> buf[2048];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">int</span> bytes_read;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    bytes_read = new_manager.receiving(sock, &amp;buf, 2048);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;     std::cout&lt;&lt;string(buf, bytes_read)&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    new_db.<a class="code" href="classDB.html#a77ffd17e79f26fe962b659b5aabc75d2">IDcheck</a>(<span class="keywordtype">string</span>(buf, bytes_read));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classAuth.html">Auth</a> new_auth(<span class="keywordtype">string</span>(buf, bytes_read), new_db.<a class="code" href="classDB.html#a5aae0f601a683e15749128cf6f6bce28">DataBaseP</a>[<span class="keywordtype">string</span>(buf, bytes_read)]);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        new_auth.GenSALT();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">string</span> str_salt = new_auth.getSALT();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">char</span> salt_buf[16];</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        strcpy(salt_buf, str_salt.c_str());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        new_manager.sending(sock, salt_buf, <span class="keyword">sizeof</span>(salt_buf));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        bytes_read = new_manager.receiving(sock, &amp;buf, 2048);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">string</span> pass = string(buf, bytes_read);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        new_auth.CompareHashes(pass);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            new_manager.sending(sock, new_auth.OKmsg, <span class="keyword">sizeof</span>(new_auth.OKmsg));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            uint32_t num_vectors;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            uint32_t vector_len;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            bytes_read = new_manager.receiving(sock, &amp;num_vectors, <span class="keyword">sizeof</span> num_vectors);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i =0; i&lt; num_vectors; i++) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                bytes_read = new_manager.receiving(sock, &amp;vector_len, <span class="keyword">sizeof</span> vector_len);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                int16_t int_buf[vector_len];</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                bytes_read = new_manager.receiving(sock, &amp;int_buf, vector_len*<span class="keyword">sizeof</span>(int16_t));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                std::vector&lt;int16_t&gt; arr;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i =0; i&lt; vector_len; i++) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    arr.push_back(int_buf[i]);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                new_manager.sending(sock, <a class="code" href="classCounter.html">Counter</a>().mean(arr), <span class="keyword">sizeof</span>(int16_t));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            close(sock);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            std::cout&lt;&lt;<span class="stringliteral">&quot;done\n&quot;</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="classserver__error.html">server_error</a> &amp; e) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="classErrorTracker.html">ErrorTracker</a> new_ErrTr;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        new_ErrTr.<a class="code" href="classErrorTracker.html#aa9ee4476dc99046a2e782c182c1d0995">setLogName</a>(LogName);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        new_ErrTr.<a class="code" href="classErrorTracker.html#a7667512c5014b01f0709851fa26647ac">write_log</a>(e.what(), e.<a class="code" href="classserver__error.html#a8bc9cd118e304db2a79ef4fb61c3d2f5">getState</a>());</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> (e.<a class="code" href="classserver__error.html#a8bc9cd118e304db2a79ef4fb61c3d2f5">getState</a>()){</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            exit(1);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classWebManager.html">WebManager</a> ERR_send_manager(port);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        ERR_send_manager.sending(sock, <a class="code" href="classAuth.html">Auth</a>(<span class="stringliteral">&quot;NO&quot;</span>,<span class="stringliteral">&quot;NO&quot;</span>).ERRmsg, <span class="keyword">sizeof</span>(<a class="code" href="classAuth.html">Auth</a>(<span class="stringliteral">&quot;NO&quot;</span>,<span class="stringliteral">&quot;NO&quot;</span>).ERRmsg));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        close(sock);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="ttc" id="aAuth_8h_html"><div class="ttname"><a href="Auth_8h.html">Auth.h</a></div><div class="ttdoc">Класс для аутентификации клиента на сервере</div></div>
+<div class="ttc" id="aclassAuth_html"><div class="ttname"><a href="classAuth.html">Auth</a></div><div class="ttdoc">Класс для аутентификации клиента на сервере</div><div class="ttdef"><b>Definition:</b> Auth.h:18</div></div>
+<div class="ttc" id="aclassCounter_html"><div class="ttname"><a href="classCounter.html">Counter</a></div><div class="ttdoc">Класс для вычислений по вектору</div><div class="ttdef"><b>Definition:</b> Counter.h:12</div></div>
+<div class="ttc" id="aclassDB_html"><div class="ttname"><a href="classDB.html">DB</a></div><div class="ttdoc">Класс для работы с базой данных пользователей</div><div class="ttdef"><b>Definition:</b> DataBase.h:17</div></div>
+<div class="ttc" id="aclassDB_html_a5aae0f601a683e15749128cf6f6bce28"><div class="ttname"><a href="classDB.html#a5aae0f601a683e15749128cf6f6bce28">DB::DataBaseP</a></div><div class="ttdeci">std::map&lt; std::string, std::string &gt; DataBaseP</div><div class="ttdoc">Словарь с парами идентификатор:пароль</div><div class="ttdef"><b>Definition:</b> DataBase.h:21</div></div>
+<div class="ttc" id="aclassDB_html_a77ffd17e79f26fe962b659b5aabc75d2"><div class="ttname"><a href="classDB.html#a77ffd17e79f26fe962b659b5aabc75d2">DB::IDcheck</a></div><div class="ttdeci">bool IDcheck(std::string login)</div><div class="ttdoc">Проверка наличия идентификатора клиента в базе данных</div><div class="ttdef"><b>Definition:</b> DataBase.cpp:24</div></div>
+<div class="ttc" id="aclassErrorTracker_html"><div class="ttname"><a href="classErrorTracker.html">ErrorTracker</a></div><div class="ttdoc">Класс для обработки ошибок</div><div class="ttdef"><b>Definition:</b> ErrorTracker.h:15</div></div>
+<div class="ttc" id="aclassErrorTracker_html_a7667512c5014b01f0709851fa26647ac"><div class="ttname"><a href="classErrorTracker.html#a7667512c5014b01f0709851fa26647ac">ErrorTracker::write_log</a></div><div class="ttdeci">void write_log(std::string what, bool Critical)</div><div class="ttdoc">Запись ошибки в лог</div><div class="ttdef"><b>Definition:</b> ErrorTracker.cpp:12</div></div>
+<div class="ttc" id="aclassErrorTracker_html_aa9ee4476dc99046a2e782c182c1d0995"><div class="ttname"><a href="classErrorTracker.html#aa9ee4476dc99046a2e782c182c1d0995">ErrorTracker::setLogName</a></div><div class="ttdeci">void setLogName(std::string LogName)</div><div class="ttdoc">Конструктор без параметров</div><div class="ttdef"><b>Definition:</b> ErrorTracker.h:20</div></div>
+<div class="ttc" id="aclassWebManager_html"><div class="ttname"><a href="classWebManager.html">WebManager</a></div><div class="ttdoc">Класс, обеспечивающий работу с сокетами и сетовое взаимодействие</div><div class="ttdef"><b>Definition:</b> WebManager.h:18</div></div>
+<div class="ttc" id="aclassserver__error_html"><div class="ttname"><a href="classserver__error.html">server_error</a></div><div class="ttdoc">Класс ошибок</div><div class="ttdef"><b>Definition:</b> ErrorTracker.h:38</div></div>
+<div class="ttc" id="aclassserver__error_html_a8bc9cd118e304db2a79ef4fb61c3d2f5"><div class="ttname"><a href="classserver__error.html#a8bc9cd118e304db2a79ef4fb61c3d2f5">server_error::getState</a></div><div class="ttdeci">bool getState() const</div><div class="ttdoc">Возвращает статус критичности ошибки</div><div class="ttdef"><b>Definition:</b> ErrorTracker.h:60</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
