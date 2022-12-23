@@ -18,3 +18,9 @@ Thu Dec 22 21:38:54 2022 Socket bind error Критическая
 Thu Dec 22 21:39:21 2022 Invalid ID Штатная
 Thu Dec 22 21:42:32 2022 Invalid ID Штатная
 Thu Dec 22 21:46:25 2022 Wrong DB File Name Критическая
+Fri Dec 23 06:54:49 2022 Invalid ID Критическая
+Fri Dec 23 07:41:56 2022 Socket bind error Критическая
+Fri Dec 23 07:42:08 2022 Socket bind error Критическая
+Fri Dec 23 07:42:12 2022 Socket bind error Критическая
+Fri Dec 23 07:50:43 2022 Invalid ID Штатная
+Fri Dec 23 08:05:10 2022 Invalid ID Штатная

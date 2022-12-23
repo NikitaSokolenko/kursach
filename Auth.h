@@ -3,7 +3,7 @@
 #include <string>
 #include "ErrorTracker.h"
 
-class Auth: private ErrorTracker
+class Auth
 {
 private:
     

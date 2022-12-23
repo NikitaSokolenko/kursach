@@ -15,18 +15,18 @@ ErrorTracker ErrTr;
 
 int main(int argc, char **argv)
 {
+	try{
     Opts op(argc, argv);
     ErrTr.setLogName(op.getLogFileName());
     op.CheckFiles();
     DB new_db(op.getDataBaseName());
-    WebManager new_manager(op.getPort());
-    //ErrorTracker new_error_tracker(op.getLogFileName());
-    new_manager.new_bind();
-    //std::vector <thread> tr;
+    WebManager main_manager(op.getPort());
+    main_manager.new_bind();
     std::cout<<"robit"<<std::endl;
-    new_manager.start_listening();
+    main_manager.start_listening();
     while (true) {
-        int sock = new_manager.accepting();
+        int sock = main_manager.accepting();
+		
         /*while (tr.size() > 9) {
             sleep(1);
         }*/
@@ -36,7 +36,13 @@ int main(int argc, char **argv)
             (*it).detach();
 
         }*/
-        conversation(new_manager, new_db, sock);
+        conversation(op.getPort(), op.getLogFileName(), new_db, sock);
+    	}
+	} catch (const server_error & e) {
+		ErrTr.write_log(e.what(), e.getState());
+        if (e.getState()){
+			exit(1);
+		}
     }
     return 0;
 }

@@ -4,6 +4,7 @@
 #include "DataBase.h"
 #include <iostream>
 #include "WebManager.h"
+#include "ErrorTracker.h"
 #include <thread>
 #include <vector>
 #include <string>
@@ -11,16 +12,16 @@
 
 using namespace std;
 
-void conversation(WebManager new_manager, DB new_db, int sock)
+
+void conversation(unsigned int port, std::string LogName, DB new_db, int sock)
 {
-	if(sock<0){
-		return;}
+	try{
+	WebManager new_manager(port);
     char buf[2048];
     int bytes_read;
     bytes_read = new_manager.receiving(sock, &buf, 2048);
-    //string UsrID = string(buf, bytes_read);
      std::cout<<string(buf, bytes_read)<<std::endl;
-    if (new_db.IDcheck(string(buf, bytes_read))) {
+    new_db.IDcheck(string(buf, bytes_read));
         Auth new_auth(string(buf, bytes_read), new_db.DataBaseP[string(buf, bytes_read)]);
         new_auth.GenSALT();
         string str_salt = new_auth.getSALT();
@@ -29,9 +30,7 @@ void conversation(WebManager new_manager, DB new_db, int sock)
         new_manager.sending(sock, salt_buf, sizeof(salt_buf));
         bytes_read = new_manager.receiving(sock, &buf, 2048);
         string pass = string(buf, bytes_read);
-        //std::cout<<pass<<std::endl;
-        //std::cout<<new_auth.getstrHash()<<std::endl;
-        if (new_auth.CompareHashes(pass)) {
+        new_auth.CompareHashes(pass);
             new_manager.sending(sock, new_auth.OKmsg, sizeof(new_auth.OKmsg));
             uint32_t num_vectors;
             uint32_t vector_len;
@@ -46,17 +45,19 @@ void conversation(WebManager new_manager, DB new_db, int sock)
                 }
                 new_manager.sending(sock, Counter().mean(arr), sizeof(int16_t));
             }
-            new_manager.closing(sock);
+            close(sock);
             std::cout<<"done\n";
             return;
-        } else {
-            new_manager.sending(sock, Auth("NO","NO").ERRmsg, sizeof(Auth("NO","NO").ERRmsg));
-            new_manager.closing(sock);
-            return;
-        }
-    } else {
-        new_manager.sending(sock, Auth("NO","NO").ERRmsg, sizeof(Auth("NO","NO").ERRmsg));
-        new_manager.closing(sock);
+    } catch (const server_error & e) {
+		ErrorTracker new_ErrTr;
+		new_ErrTr.setLogName(LogName);
+		new_ErrTr.write_log(e.what(), e.getState());
+		if (e.getState()){
+			exit(1);
+		}
+		WebManager ERR_send_manager(port);
+        ERR_send_manager.sending(sock, Auth("NO","NO").ERRmsg, sizeof(Auth("NO","NO").ERRmsg));
+        close(sock);
         return;
     }
 }

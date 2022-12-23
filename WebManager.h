@@ -25,5 +25,4 @@ public:
     int accepting();
     int receiving(int sock, void*buf, int size);
     void sending(int sock, void*buf, int sizeb);
-    void closing(int sock);
 };

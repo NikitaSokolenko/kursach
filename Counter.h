@@ -4,7 +4,6 @@
 #include <exception>
 #include "ErrorTracker.h"
 
-extern ErrorTracker ErrTr;
 
 class Counter
 {
@@ -24,8 +23,8 @@ public:
         }
         result[0] = avg;
 		}catch(std::exception &e){
-		ErrTr.write_log(e.what(), true);
-		exit(1);}									
+			throw server_error(std::string("Invalid ID"), true);
+			exit(1);}									
         return result;
     }
 };
