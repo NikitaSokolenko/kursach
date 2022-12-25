@@ -19,7 +19,7 @@ public:
  @brief Вычисляет среднее арифметическое по вектору
  @param [in] arr, вектор, std::vector<int16_t>
  @return указатель на массив с результатом, int16_t *
- @throw std::server_error в случае ошибки, критическая
+ @throw std::server_error в случае ошибки, Штатная
  @code 
  type = invalid_argument, what ="Count Error"
  @endcode

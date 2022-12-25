@@ -42,12 +42,12 @@ bool Opts::CheckFiles()
 {
         std::ifstream file1(DataBaseName);
         if (!file1.good()) {
-            throw std::invalid_argument(std::string("Wrong DB File Name"));
+            throw server_error(std::string("Wrong DB File Name"), true);
 			return false;
         }
         std::ifstream file2(LogFileName);
         if (!file2.good()) {
-            throw std::invalid_argument(std::string("Wrong Log File Name"));
+            throw server_error(std::string("Wrong Log File Name"), true);
 			return false;
 		}
 

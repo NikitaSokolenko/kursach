@@ -1,4 +1,3 @@
-#include "interface.h"
 #include "Auth.h"
 #include "Counter.h"
 #include "DataBase.h"
@@ -47,9 +46,14 @@ void conversation(unsigned int port, std::string LogName, DB new_db, int sock)
     char buf[2048];
     int bytes_read;
     bytes_read = new_manager.receiving(sock, &buf, 2048);
-     std::cout<<string(buf, bytes_read)<<std::endl;
-    new_db.IDcheck(string(buf, bytes_read));
-        Auth new_auth(string(buf, bytes_read), new_db.DataBaseP[string(buf, bytes_read)]);
+	std::string USRlogIn = string(buf, bytes_read);
+    for (uint i = 0; i < USRlogIn.size();i++){
+		if (USRlogIn[i] == '\n'){
+			USRlogIn.pop_back();}
+	}
+    std::cout<<USRlogIn<< USRlogIn.size()<<std::endl;
+    new_db.IDcheck(USRlogIn);
+        Auth new_auth(USRlogIn, new_db.DataBaseP[USRlogIn]);
         new_auth.GenSALT();
         string str_salt = new_auth.getSALT();
         char salt_buf[16];
@@ -57,6 +61,10 @@ void conversation(unsigned int port, std::string LogName, DB new_db, int sock)
         new_manager.sending(sock, salt_buf, sizeof(salt_buf));
         bytes_read = new_manager.receiving(sock, &buf, 2048);
         string pass = string(buf, bytes_read);
+		for (uint i = 0; i < pass.size();i++){
+		if (pass[i] == '\n'){
+			pass.pop_back();}
+	}
         new_auth.CompareHashes(pass);
             new_manager.sending(sock, new_auth.OKmsg, sizeof(new_auth.OKmsg));
             uint32_t num_vectors;

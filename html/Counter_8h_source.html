@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Курсовая работа. Программная реализация сетевого сервера: Исходный файл Counter.h</title>
+<title>Курсовая работа. Программная реализация сетевого сервера.: Исходный файл Counter.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Курсовая работа. Программная реализация сетевого сервера
+   <div id="projectname">Курсовая работа. Программная реализация сетевого сервера.
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Однопоточный сервер</div>
+   <div id="projectbrief">Однопоточный сервер.</div>
   </td>
  </tr>
  </tbody>
@@ -83,20 +83,22 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classCounter.html#aa537bd6adc3a27359bf5b292ef705b85">   28</a></span>&#160;    int16_t * <a class="code" href="classCounter.html#aa537bd6adc3a27359bf5b292ef705b85">mean</a>(std::vector&lt;int16_t&gt; arr)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">try</span>{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">for</span> (std::vector&lt;int16_t&gt;::iterator it = arr.begin() ; it != arr.end(); ++it){</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::cout &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; *it;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::cout &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">double</span> avg = 0;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; arr.size(); i++) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            avg += (arr[i] - avg) / (i + 1);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classCounter.html#a1abd18ad19f815dc5e0aa1ccfde9ab69">result</a>[0] = avg;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }<span class="keywordflow">catch</span>(std::exception &amp;e){</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classserver__error.html">server_error</a>(std::string(<span class="stringliteral">&quot;Count Error&quot;</span>), <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }                                   </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classCounter.html#a1abd18ad19f815dc5e0aa1ccfde9ab69">result</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">if</span> (arr.empty()){</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classserver__error.html">server_error</a>(std::string(<span class="stringliteral">&quot;Count Error&quot;</span>));}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">for</span> (std::vector&lt;int16_t&gt;::iterator it = arr.begin() ; it != arr.end(); ++it){</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        std::cout &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; *it;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        std::cout &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">double</span> avg = 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; arr.size(); i++) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            avg += (arr[i] - avg) / (i + 1);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classCounter.html#a1abd18ad19f815dc5e0aa1ccfde9ab69">result</a>[0] = avg;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }<span class="keywordflow">catch</span>(std::exception &amp;e){</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classserver__error.html">server_error</a>(std::string(<span class="stringliteral">&quot;Count Error&quot;</span>));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }                                   </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classCounter.html#a1abd18ad19f815dc5e0aa1ccfde9ab69">result</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
 <div class="ttc" id="aclassCounter_html"><div class="ttname"><a href="classCounter.html">Counter</a></div><div class="ttdoc">Класс для вычислений по вектору</div><div class="ttdef"><b>Definition:</b> Counter.h:12</div></div>
 <div class="ttc" id="aclassCounter_html_a1abd18ad19f815dc5e0aa1ccfde9ab69"><div class="ttname"><a href="classCounter.html#a1abd18ad19f815dc5e0aa1ccfde9ab69">Counter::result</a></div><div class="ttdeci">int16_t result[1]</div><div class="ttdoc">Результат вычислений</div><div class="ttdef"><b>Definition:</b> Counter.h:14</div></div>
 <div class="ttc" id="aclassCounter_html_aa537bd6adc3a27359bf5b292ef705b85"><div class="ttname"><a href="classCounter.html#aa537bd6adc3a27359bf5b292ef705b85">Counter::mean</a></div><div class="ttdeci">int16_t * mean(std::vector&lt; int16_t &gt; arr)</div><div class="ttdoc">Конструктор без параметров</div><div class="ttdef"><b>Definition:</b> Counter.h:28</div></div>
